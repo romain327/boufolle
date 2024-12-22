@@ -20,13 +20,16 @@ class Boufolle {
             : spi(nullptr), magnetoClick(cs), speakupClick(nord, sud, est, ouest), GREEN(green), RED(red) {
             switch (spi_mode) {
                 case 1:
-                    spi = new SPI(D11, D12, D13);
+                    spi = new SPI(PA_7, PA_6, PA_5);
                     break;
                 case 2:
-                    spi = new SPI(D11, D12, D13);
+                    spi = new SPI(PB_15, PB_14, PB_13);
                     break;
-                default:
-                    spi = new SPI(D11, D12, D13);
+                case 3::
+                    spi = new SPI(PB_5, PB_4, PB_3);
+                    break;
+                default 1:
+                    spi = new SPI(PA_7, PA_6, PA_5);
                     break;
             }
             magnetoClick.init(spi);
